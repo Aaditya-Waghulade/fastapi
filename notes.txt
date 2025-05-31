@@ -1,0 +1,22 @@
+Commands for creating a fastapi app
+
+1. For Creating Virtual Env : "python -m venv <environment_name>"
+2. Activate the virtual env : "source <env name>/bin/activate"
+3. Requirements.txt : Type the libraries you want to install in Requirements.txt
+4. Install the libraries : "pip install -r requirements.txt"
+5. For Starting the survers : uvicorn main:app --reload
+
+Steps For Creating a complete app
+1. Create a new file called main.py
+2. Now create a pydantic base model or you can make schemas.py and make your class of model there.
+3. After Creating Class of pydantic BaseModel you have to use it in function with the endpoint
+4. DataBase Connection and SQLALCHAMY with Models and Schemas (For Ref: "database.py" , )
+> You can use sqlite3 for local database
+SQLALCHaMY is the library which is used to fetch the objects into a database table, Basicaly it helps us to create the tables and relations between databases and tables
+    4.1) import "engine","sessionmaker","declarative_base",
+    4.2) Define the database url
+    4.3) Create the engine 
+    4.4) Create the session
+    4.5) Create the Base with declarative_base
+5. Create Models(columns,rows) in 'models.py'
+6. After Creating the  class of Tables with its datatypes in models.py import it into main.py and then create a database connection and then create a table in the database using the Base.metadata.create_all(engine) method.
